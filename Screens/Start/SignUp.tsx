@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native"
 import AppTextField from "../../components/Input/AppTextField"
 import { useForm } from "react-hook-form"
 import AppButton from "../../components/Display/AppButton"
@@ -10,6 +10,8 @@ import { useNavigation } from "@react-navigation/native"
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { RootStackParamList } from "../allroutes"
 import { SecureStorage } from "../../utils/storage/secureStorage"
+import { createAccountFormType, createAccountSchema } from "../../utils/validation/createAccountVal"
+import { zodResolver } from "@hookform/resolvers/zod"
 // import RNSecureStorage, { ACCESSIBLE } from 'rn-secure-storage';
 
 
@@ -25,7 +27,9 @@ const SignUpPage = () => {
         watch,
         control,
         formState: { errors },
-    } = useForm()
+    } = useForm<createAccountFormType>({
+        resolver: zodResolver(createAccountSchema)
+    })
 
 
 
@@ -89,12 +93,14 @@ const SignUpPage = () => {
 
 
             <View style={{
-                marginHorizontal: 20
+                marginHorizontal: 20,
+                gap: 20
             }}>
                 <AppTextField
                     validationName="name"
                     title="Name"
                     control={control}
+                    errorMessage={errors.name?.message}
                 />
 
 
@@ -102,6 +108,7 @@ const SignUpPage = () => {
                     validationName="email"
                     title="Email"
                     control={control}
+                    errorMessage={errors.email?.message}
                 />
 
                 <AppTextField
@@ -109,6 +116,7 @@ const SignUpPage = () => {
                     title="Age"
                     keyboardType="number-pad"
                     control={control}
+                    errorMessage={errors.age?.message}
                 />
 
                 <AppTextField
@@ -116,6 +124,7 @@ const SignUpPage = () => {
                     title="Password"
                     isPassword
                     control={control}
+                    errorMessage={errors.password?.message}
                 />
 
                 <AppButton
@@ -159,6 +168,8 @@ const SignUpPage = () => {
 
 
             </View>
+
+
 
 
 

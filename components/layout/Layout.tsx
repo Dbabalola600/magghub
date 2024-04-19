@@ -31,12 +31,14 @@ const MainLayout = ({ children, backNavigation = false, backArrowAction }: Layou
 
 
     return (
+
         <SafeAreaProvider>
 
-            <TouchableWithoutFeedback>
-                <ScrollView
-                    contentContainerStyle={{ flex: 1, flexGrow: 1, backgroundColor: "white" }}
-                >
+            {/* <TouchableWithoutFeedback> */}
+                <View
+                   style={{ flex: 1, flexGrow: 1, backgroundColor: "white" }}
+                    // bounces={false}
+               >
                     <View style={{ paddingTop: 50 }}>
                         <View style={{
                             flexDirection: "row",
@@ -71,10 +73,12 @@ const MainLayout = ({ children, backNavigation = false, backArrowAction }: Layou
                     </View>
 
 
-                </ScrollView>
+                </View>
 
-            </TouchableWithoutFeedback>
+            {/* </TouchableWithoutFeedback> */}
         </SafeAreaProvider>
+
+
 
     )
 

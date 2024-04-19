@@ -169,7 +169,7 @@ const ErrorMessage = (props: { children: React.ReactNode }) => (
         style={{
             color: COLORS.primaryRedHex,
             marginTop: 1,
-            fontSize: 5
+            fontSize: 15
         }}
     // className={`text-xs text-red-700 mt-1`}
     >

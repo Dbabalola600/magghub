@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import MainLayout from "../../components/layout/Layout"
 import React, { useState } from "react"
 import LoginPage from "./Login"
@@ -20,9 +20,13 @@ const StartScreen = ({ navigation }: ScreenProps) => {
     return (
         <MainLayout >
 
-            <View style={{ flex: 1, paddingTop: 30, paddingBottom: 30 }}>
+            <ScrollView
+                style={{ flex: 1, paddingTop: 30 , backgroundColor:"white"}}
+                showsVerticalScrollIndicator={false} 
+       
+                >
 
-             
+
                 <Text style={style.headerStyle} >
                     Welcome
                 </Text>
@@ -41,7 +45,8 @@ const StartScreen = ({ navigation }: ScreenProps) => {
 
 
                 <View style={{
-                    paddingTop: 30
+                    paddingTop: 30,
+                    paddingBottom: 50
                 }}>
                     {isOption === "signup" ?
 
@@ -92,14 +97,10 @@ const StartScreen = ({ navigation }: ScreenProps) => {
 
                     }
 
-{/* <AppButton
-                    text="heh"
-                    onPress={() => navigation.navigate("Profile")}
 
-                /> */}
 
                 </View>
-            </View>
+            </ScrollView>
         </MainLayout>
     )
 }

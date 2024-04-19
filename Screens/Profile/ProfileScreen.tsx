@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native"
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native"
 import MainLayout from "../../components/layout/Layout"
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { RootStackParamList } from "../allroutes"
@@ -43,7 +43,10 @@ const ProfileScreen = ({ navigation }: ScreenProps) => {
 
     return (
         <MainLayout backNavigation backArrowAction={LogOut}>
-            <View style={{ paddingTop: 50 }}>
+            <ScrollView style={{ paddingTop: 50 }}
+              showsVerticalScrollIndicator={false} 
+       
+            >
 
                 <View
                     style={{
@@ -116,7 +119,7 @@ const ProfileScreen = ({ navigation }: ScreenProps) => {
                     </View>
                 </View>
 
-            </View>
+            </ScrollView>
 
         </MainLayout>
     )
