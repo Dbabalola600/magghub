@@ -78,7 +78,8 @@ const AppTextField = (props: AppTextFieldProps) => {
                                         paddingVertical: 2,
                                         position: "absolute",
                                         top: -11,
-                                        fontSize: 15
+                                        fontSize: 15,
+                                        color: "black"
                                     }}
                                 // className="bg-secondary max-w-fit  mx-3 px-1 absolute top-[-9]"
                                 >

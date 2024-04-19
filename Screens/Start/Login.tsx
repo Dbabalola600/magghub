@@ -107,6 +107,7 @@ const style = StyleSheet.create({
         fontWeight: "500",
         fontSize: 25,
         textAlign: "center",
-        marginVertical: 10
+        marginVertical: 10,
+        color: "gray"
     }
 })

@@ -10,6 +10,7 @@ export const createAccountSchema = z
             .string({ required_error: "Invalid" }),
         age: z
             .any({ required_error: " Invalid" }),
+            
         email: z
             .string({ required_error: " Invalid" })
             .email({ message: "Must be a valid email address" }),

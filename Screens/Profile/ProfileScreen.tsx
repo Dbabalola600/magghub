@@ -138,6 +138,7 @@ const style = StyleSheet.create({
     headerStyle: {
         fontWeight: "400",
         fontSize: 20,
+        color: "black"
     },
     innerTextStyle: {
         color: "white",

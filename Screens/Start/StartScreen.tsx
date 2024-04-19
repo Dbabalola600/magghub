@@ -113,7 +113,8 @@ const style = StyleSheet.create({
     headerStyle: {
         fontWeight: "500",
         fontSize: 25,
-        textAlign: "center"
+        textAlign: "center", 
+        color: "black"
     },
     optionsStylt: {
         alignItems: "center",
@@ -122,6 +123,7 @@ const style = StyleSheet.create({
     },
     textOptionStyle: {
         fontSize: 15,
-        textAlign: "center"
+        textAlign: "center",
+        color: "black"
     }
 })

@@ -53,6 +53,7 @@ const MainLayout = ({ children, backNavigation = false, backArrowAction }: Layou
                                     <Ionicons
                                         name="chevron-back"
                                         size={25}
+                                        color={"black"}
                                     />
                                 </Pressable>
                             )}

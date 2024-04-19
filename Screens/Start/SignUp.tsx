@@ -28,6 +28,12 @@ const SignUpPage = () => {
         control,
         formState: { errors },
     } = useForm<createAccountFormType>({
+        defaultValues: {
+            age: "",
+            email: "",
+            name: "",
+            password: ""
+        },
         resolver: zodResolver(createAccountSchema)
     })
 
@@ -101,6 +107,7 @@ const SignUpPage = () => {
                     title="Name"
                     control={control}
                     errorMessage={errors.name?.message}
+                    placeholder="endter name"
                 />
 
 
@@ -109,6 +116,7 @@ const SignUpPage = () => {
                     title="Email"
                     control={control}
                     errorMessage={errors.email?.message}
+                    placeholder="example@gmail.com"
                 />
 
                 <AppTextField
@@ -117,6 +125,7 @@ const SignUpPage = () => {
                     keyboardType="number-pad"
                     control={control}
                     errorMessage={errors.age?.message}
+                    placeholder="00"
                 />
 
                 <AppTextField
@@ -125,6 +134,7 @@ const SignUpPage = () => {
                     isPassword
                     control={control}
                     errorMessage={errors.password?.message}
+                    placeholder="********"
                 />
 
                 <AppButton
@@ -189,6 +199,7 @@ const style = StyleSheet.create({
         fontWeight: "500",
         fontSize: 25,
         textAlign: "center",
-        marginVertical: 10
+        marginVertical: 10,
+        color: "gray",
     }
 })
